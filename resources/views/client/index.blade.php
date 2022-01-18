@@ -65,7 +65,7 @@
                         <th>Nombre(s)</th>
                         <th>Apellidos</th>
 
-                        <th>Correo</th>
+                        <th>Dirección</th>
                         <th>Teléfono</th>
                         <th>Creditos Aceptados</th>
                         <th>Creditos Rechazados</th>
@@ -80,7 +80,7 @@
                         <td>{{$item->name}}</td>
                         <td>{{$item->last_name}}</td>
 
-                        <td>{{$item->email}}</td>
+                        <td>{{$item->street . ', '.$item->suburb.', '.$item->postal_code}}</td>
                         <td>{{$item->phone}}</td>
                         <td style="text-align: center;">{{count($item->accepted_credits)}}</td>
                         <td>{{count($item->rejected_credits)}}</td>

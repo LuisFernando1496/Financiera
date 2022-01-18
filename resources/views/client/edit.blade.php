@@ -44,18 +44,18 @@
                     @method('PUT')
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <label>Imagen actual del cliente</label><br>
+                            <label>Imagen actual de la vivienda</label><br>
                             <img class="ml-5" id="clientImg" src="" width="250" height="250" style="background-size: cover;">
                         </div>
                         <div class="form-group col-6">
                             {{-- <div class="d-flex justify-content-center"> --}}
                                 <div class="card profile2">
-                                    <p>Subir nueva imagen del cliente</p>
+                                    <p>Subir nueva imagen de domicilio</p>
                                     <div class="avatar">
                                         <input type="file" name="clientImgEdit" id="file-uploader2" accept="image/*">
-                                        <div class="img" style="background-image: url('/av1.png');"></div>
+                                        <div class="img" style="background-image: url('/1087087.png');"></div>
                                             <label for="file-uploader2" class="avatar-selector">
-                                                <i class="fa fa-camera"></i>
+                                                <i class="fa fa-image"></i>
                                             </label>
                                     </div>
                                 </div>

@@ -126,7 +126,41 @@
                             <input type="number"readonly min="1" class="form-control" name="economic" id="economicEdit" value="" placeholder="Dependiente económico" required />
                         </div>
                     </div>
-                    <div class="form-row">
+                    <center id="title_conyuge_edit">
+                        <h6>1.1.- Datos del conyuge o pareja</h6>
+                        <div class="h-divider">
+                        </div>
+                    </center>
+                    <div class="form-row" id="formulario_conyuge_edit">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="nombre_conyuge">Nombre(s) de la pareja</label>
+                                <input type="text" class="form-control" name="nombre_conyuge" id="nombre_conyuge_edit" readonly value="" placeholder="Nombre de la pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos_conyuge">Apellidos de la pareja</label>
+                                <input type="text" class="form-control" name="apellidos_conyuge" id="apellidos_conyuge_edit" readonly value="" placeholder="Apellidos de la pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="celular_conyuge">Celular</label>
+                                <input type="number" class="form-control" name="celular_conyuge" id="celular_conyuge_edit" readonly value="" placeholder="Celular de la pareja" maxlength="10" required />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="calle_conyuge">Calle</label>
+                                <input type="text" class="form-control" name="calle_conyuge" id="calle_conyuge_edit" readonly value="" placeholder="Calle donde vive su pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="colonia_conyuge">Colonia</label>
+                                <input type="text" class="form-control" name="colonia_conyuge" id="colonia_conyuge_edit" readonly value="" placeholder="Colonia donde vive su pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo_postal_conyuge">Codigo postal</label>
+                                <input type="text" class="form-control" name="codigo_postal_conyuge" id="codigo_postal_conyuge_edit" readonly value="" placeholder="Codigo postal donde vive su pareja" required />
+                            </div>
+                        </div>
+                        <!--
                         <div class="form-group col-7">
                             <label for="entreprise_name">Nombre Empresa ó Patrón</label>
                             <input type="text"  readonly class="form-control" name="entreprise_name" id="entreprise_nameEdit" value="" placeholder="Nombre Empresa" required />
@@ -146,15 +180,62 @@
                         <div class="form-group col-3">
                             <label for="schedule_out">Horario Laboral Salida</label>
                             <input type="time" readonly class="form-control" name="schedule_out" id="schedule_outEdit" value="" placeholder="Horario Laboral Salida" required />
-                        </div>
+                        </div>-->
                     </div>
                     <center>
-                        <h6>2.- Referencias familiares del cliente</h6>
+                        <h6>2.- Datos del negocio del solicitante</h6>
                         <div class="h-divider">
                         </div>
                     </center>
                     <div class="row" style="padding-bottom: 1%;">
-                        <div class="col-6">
+                        <div class="form-group col-5">
+                            <label for="nombre_negocio">Nombre del negocio</label>
+                            <input type="text" class="form-control" name="nombre_negocio" readonly id="nombre_negocio_edit" value="" placeholder="Nombre del negocio" required />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="actividad_negocio">Actividad</label>
+                            <input type="text" class="form-control" name="actividad_negocio" readonly id="actividad_negocio_edit" value="" placeholder="¿Qué vende el negocio?" required />
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="tiempo_negocio">Tiempo del negocio</label>
+                            <input type="number" class="form-control" name="tiempo_negocio" readonly id="tiempo_negocio_edit" value="" placeholder="1 ó más años" required />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="telefono_negocio">Telefono del negocio</label>
+                            <input type="number" class="form-control" name="telefono_negocio" readonly id="telefono_negocio_edit" value="" placeholder="Número telefonico" maxlength="10" required />
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="calle_negocio">Calle de ubicación del negocio</label>
+                            <input type="text" class="form-control" name="calle_negocio" readonly id="calle_negocio_edit" value="" placeholder="Calle del negocio" required />
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="colonia_negocio">Colinia de ubicación del negocio</label>
+                            <input type="text" class="form-control" name="colonia_negocio" readonly id="colonia_negocio_edit" value="" placeholder="Colonia" required />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="ganacia_negocio">Ganacias mensuales del negocio</label>
+                            <input type="number" class="form-control" name="ganacia_negocio" readonly id="ganacia_negocio_edit" value="" placeholder="$00.00" required />
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="gastos_negocio">Gastos mensuales del negocio</label>
+                            <input type="number" class="form-control" name="gastos_negocio" readonly step="any" id="gastos_negocio_edit" value="" placeholder="$00.00" required />
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="negocio">Negocio del solicitante</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="negocio" readonly id="negocio_propio" value="0" checked>
+                                <label class="form-check-label" for="negocio_propio">
+                                    Propio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="negocio" readonly id="negocio_rentado" value="1">
+                                <label class="form-check-label" for="negocio_rentado">
+                                    Rentado
+                                </label>
+                            </div>
+                        </div>
+                        <!--<div class="col-6">
                             <div class="form-group">
                                 <label for="last_name2">Apellido Paterno</label>
                                 <input type="text" readonly class="form-control" name="last_name2" id="last_name2Edit" value="" placeholder="Apellido Paterno" required />
@@ -197,7 +278,7 @@
                                 <label for="cellphone3">Celular</label>
                                 <input type="text" readonly class="form-control" name="cellphone3" id="cellphone3Edit" value="" placeholder="Celular" required />
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <center>
                         <h6>3.- Aval y garantía</h6>
@@ -310,11 +391,19 @@
                             <label for="credit_bank_key">Clabe, cuenta o n° tarjeta</label>
                             <input type="text" readonly class="form-control" name="credit_bank_key" id="credit_bank_keyEdit" value="" placeholder="Clabe, cuenta o n° tarjeta" required />
                         </div>
+                        <div class="form-group col-7">
+                            <label for="rfc_bank">RFC (Registro Federal de contribuyentes)</label>
+                            <input type="text" class="form-control" name="rfc_bank" readonly id="rfc_bank_edit" value="" placeholder="Registro federal de contribuyentes" />
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="email_bank">Correo electronico</label>
+                            <input type="email" class="form-control" name="email_bank" readonly id="email_bank_edit" value="" placeholder="example@gmail.com" />
+                        </div>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="city_of">Ciudad de</label>
                         <input type="text" readonly class="form-control" name="city_of" id="city_ofEdit" value="" placeholder="Ciudad de" required />
-                    </div>
+                    </div>-->
                     
                 </form>
             </div>

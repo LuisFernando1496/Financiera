@@ -36,6 +36,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('user', 'UserController');
     Route::resource('credit', 'CreditController');
+    Route::post('/documentCredits', 'CreditController@documentationCreditUp');
+    Route::post('/numCreditEdit', 'CreditController@numCredit');
     Route::resource('branch', 'BranchController');
     Route::resource('insurance', 'InsuranceController');
     Route::resource('survey', 'SurveyController');

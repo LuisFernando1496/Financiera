@@ -79,7 +79,7 @@
                             <select name="client_id" class="form-control" id="client_id">
                                 <option value="null">Seleccione un cliente</option>
                                 @foreach($clients as $client)
-                                <option value="{{$client->id}}">{{$client->last_name}} {{$client->name}}</option>
+                                <option value="{{$client}}">{{$client->last_name}} {{$client->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -108,7 +108,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="civil_state" id="civil_state" value="1">
+                                <input class="form-check-input" type="radio" name="civil_state" id="civil_state_1" value="1">
                                 <label class="form-check-label" for="civil_state">
                                     Casado
                                 </label>
@@ -155,35 +155,13 @@
                             <input type="number" min="1" class="form-control" name="economic" id="economic" value="" placeholder="Dependiente económico" required />
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-7">
-                            <label for="entreprise_name">Nombre Empresa ó Patrón</label>
-                            <input type="text" class="form-control" name="entreprise_name" id="entreprise_name" value="" placeholder="Nombre Empresa" required />
-                        </div>
-                        <div class="form-group col-5">
-                            <label for="NRP">N° Registro Patronal (NRP)</label>
-                            <input type="number" min="0" class="form-control" name="NRP" id="NRP" value="" placeholder="N° Registro Patronal" required />
-                        </div>
-                        <div class="form-group col-6">
-                            <label for="entreprise_phone">Teléfono De Empresa ó Patrón</label>
-                            <input type="text" class="form-control" name="entreprise_phone" id="entreprise_phone" value="" maxlength="10" placeholder="Teléfono De Empresa ó Patrón" required />
-                        </div>
-                        <div class="form-group col-3">
-                            <label for="schedule_in">Horario Laboral Entrada</label>
-                            <input type="time" class="form-control" name="schedule_in" id="schedule_in" value="" placeholder="Horario Laboral Entrada" required />
-                        </div>
-                        <div class="form-group col-3">
-                            <label for="schedule_out">Horario Laboral Salida</label>
-                            <input type="time" class="form-control" name="schedule_out" id="schedule_out" value="" placeholder="Horario Laboral Salida" required />
-                        </div>
-                    </div>
-                    <center>
-                        <h6>2.- Referencias familiares del cliente</h6>
+                    <center id="title_conyuge" hidden>
+                        <h6>1.1.- Datos del conyuge o pareja</h6>
                         <div class="h-divider">
                         </div>
                     </center>
-                    <div class="row" style="padding-bottom: 1%;">
-                        <div class="col-6">
+                    <div class="row" style="padding-bottom: 1%;" id="formulario_conyuge">
+                        <!--<div class="col-6">
                             <div class="form-group">
                                 <label for="last_name2">Apellido Paterno</label>
                                 <input type="text" class="form-control" name="last_name2" id="last_name2" value="" placeholder="Apellido Paterno" required />
@@ -225,6 +203,108 @@
                             <div class="form-group">
                                 <label for="cellphone3">Celular</label>
                                 <input type="text" class="form-control" name="cellphone3" id="cellphone3" value="" placeholder="Celular" maxlength="10" required />
+                            </div>
+                        </div>-->
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="nombre_conyuge">Nombre(s) de la pareja</label>
+                                <input type="text" class="form-control" name="nombre_conyuge" id="nombre_conyuge" value="" placeholder="Nombre de la pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos_conyuge">Apellidos de la pareja</label>
+                                <input type="text" class="form-control" name="apellidos_conyuge" id="apellidos_conyuge" value="" placeholder="Apellidos de la pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="celular_conyuge">Celular</label>
+                                <input type="number" class="form-control" name="celular_conyuge" id="celular_conyuge" value="" placeholder="Celular de la pareja" maxlength="10" required />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="calle_conyuge">Calle</label>
+                                <input type="text" class="form-control" name="calle_conyuge" id="calle_conyuge" value="" placeholder="Calle donde vive su pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="colonia_conyuge">Colonia</label>
+                                <input type="text" class="form-control" name="colonia_conyuge" id="colonia_conyuge" value="" placeholder="Colonia donde vive su pareja" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo_postal_conyuge">Codigo postal</label>
+                                <input type="text" class="form-control" name="codigo_postal_conyuge" id="codigo_postal_conyuge" value="" placeholder="Codigo postal donde vive su pareja" required />
+                            </div>
+                        </div>
+                    </div>
+                    <center>
+                        <h6>2.- Datos del negocio del solicitante</h6>
+                        <div class="h-divider">
+                        </div>
+                    </center>
+                    <div class="form-row">
+                        <!--<div class="form-group col-7">
+                            <label for="entreprise_name">Nombre del negocio</label>
+                            <input type="text" class="form-control" name="entreprise_name" id="entreprise_name" value="" placeholder="Nombre Empresa" required />
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="NRP">N° Registro Patronal (NRP)</label>
+                            <input type="number" min="0" class="form-control" name="NRP" id="NRP" value="" placeholder="N° Registro Patronal" required />
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="entreprise_phone">Teléfono De Empresa ó Patrón</label>
+                            <input type="text" class="form-control" name="entreprise_phone" id="entreprise_phone" value="" maxlength="10" placeholder="Teléfono De Empresa ó Patrón" required />
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="schedule_in">Horario Laboral Entrada</label>
+                            <input type="time" class="form-control" name="schedule_in" id="schedule_in" value="" placeholder="Horario Laboral Entrada" required />
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="schedule_out">Horario Laboral Salida</label>
+                            <input type="time" class="form-control" name="schedule_out" id="schedule_out" value="" placeholder="Horario Laboral Salida" required />
+                        </div>-->
+                        <div class="form-group col-5">
+                            <label for="nombre_negocio">Nombre del negocio</label>
+                            <input type="text" class="form-control" name="nombre_negocio" id="nombre_negocio" value="" placeholder="Nombre del negocio" required />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="actividad_negocio">Actividad</label>
+                            <input type="text" class="form-control" name="actividad_negocio" id="actividad_negocio" value="" placeholder="¿Qué vende el negocio?" required />
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="tiempo_negocio">Tiempo del negocio</label>
+                            <input type="number" class="form-control" name="tiempo_negocio" id="tiempo_negocio" value="" placeholder="1 ó más años" required />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="telefono_negocio">Telefono del negocio</label>
+                            <input type="number" class="form-control" name="telefono_negocio" id="telefono_negocio" value="" placeholder="Número telefonico" maxlength="10" required />
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="calle_negocio">Calle de ubicación del negocio</label>
+                            <input type="text" class="form-control" name="calle_negocio" id="calle_negocio" value="" placeholder="Calle del negocio" required />
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="colonia_negocio">Colinia de ubicación del negocio</label>
+                            <input type="text" class="form-control" name="colonia_negocio" id="colonia_negocio" value="" placeholder="Colonia" required />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="ganacia_negocio">Ganacias mensuales del negocio</label>
+                            <input type="number" class="form-control" name="ganacia_negocio" id="ganacia_negocio" value="" placeholder="$00.00" required />
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="gastos_negocio">Gastos mensuales del negocio</label>
+                            <input type="number" class="form-control" name="gastos_negocio" step="any" id="gastos_negocio" value="" placeholder="$00.00" required />
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="negocio">Negocio del solicitante</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="negocio" id="negocio" value="0" checked>
+                                <label class="form-check-label" for="negocio_propio">
+                                    Propio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="negocio" id="negocio" value="1">
+                                <label class="form-check-label" for="negocio_rentado">
+                                    Rentado
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -299,11 +379,11 @@
                         </div>
                         <div class="form-group col-4">
                             <label for="time_Credit">B.- Plazo del crédito en meses (4 semanas)</label>
-                            <input type="number" min="1" class="form-control" name="time_Credit" id="time_Credit" required>
+                            <input type="number" min="3" step="any" class="form-control" name="time_Credit" id="time_Credit" required>
                         </div>
                         <div class="form-group col-4">
                             <label for="interes">Interés</label>
-                            <input type="number" min="1" max="100" class="form-control" name="interes" id="interes">
+                            <input type="number" min="1" class="form-control" name="interes" id="interes">
                         </div>
                         <div class="form-group col-4">
                             <label for="want_credit">C.- Crédito solicitado</label>
@@ -315,7 +395,7 @@
                         </div>
                         <div class="form-group col-6">
                             <label for="totalCredit">E.- Crédito Total (Interés)</label>
-                            <input type="number" class="form-control" name="total_credit" id="totalCredit" value="" placeholder="Crédito aprobado" min="1" readonly required />
+                            <input type="number" class="form-control" name="total_credit" id="totalCredit" value="" placeholder="Crédito aprobado" min="1" required />
                         </div>
                     </div>
                     <center>
@@ -336,11 +416,20 @@
                             <label for="credit_bank_key">Clabe, cuenta o n° tarjeta</label>
                             <input type="text" class="form-control" name="credit_bank_key" id="credit_bank_key" value="" placeholder="Clabe, cuenta o n° tarjeta" />
                         </div>
+                        <div class="form-group col-7">
+                            <label for="rfc_bank">RFC (Registro Federal de contribuyentes)</label>
+                            <input type="text" class="form-control" name="rfc_bank" id="rfc_bank" value="" placeholder="Registro federal de contribuyentes" />
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="email_bank">Correo electronico</label>
+                            <input type="email" class="form-control" name="email_bank" id="email_bank" value="" placeholder="example@gmail.com" />
+                        </div>
+                        
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="city_of">Ciudad de</label>
                         <input type="text" class="form-control" name="city_of" id="city_of" value="" placeholder="Ciudad de"/>
-                    </div>
+                    </div>-->
                     <div class="modal-footer">
                         <button onclick="limpiar()" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success">Guardar</button>

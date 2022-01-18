@@ -62,12 +62,13 @@
                     <div class="form-group col-12">
                         <div class="d-flex justify-content-center">
                             <div class="card profile">
-                                <p>Subir imagen del cliente</p>
+                                <p>Imagen del domicio</p>
                                 <div class="avatar">
                                     <input type="file" name="clientImg" id="file-uploader" accept="image/*">
-                                    <div class="img" style="background-image: url('/av1.png');"></div>
+                                    <div class="img" style="background-image: url('/5547324.png');"></div>
                                         <label for="file-uploader" class="avatar-selector">
-                                            <i class="fa fa-camera"></i>
+                                            <!--<i class="fa fa-camera"></i>-->
+                                            <i class="fa fa-image"></i>
                                         </label>
                                 </div>
                             </div>
